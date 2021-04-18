@@ -14,9 +14,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
     net-tools \
     iproute2 \
+    inetutils-ping \
     vim
 
-RUN pip3 install mininet
+RUN pip3 install \
+    mininet \
+    requests
 
 EXPOSE 6633 6653 6640
 
