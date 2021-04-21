@@ -13,7 +13,7 @@ from time import sleep
 
 
 class SingleSwitchTopo(Topo):
-    "Single switch connected to n hosts."
+    "Single switch connected to 4 hosts."
     def build(self):
         s1 = self.addSwitch('s1')
         h1 = self.addHost('h1')
@@ -33,7 +33,5 @@ def start(controller_ip='127.0.0.1'):
     c1 = RemoteController('c1', ip=controller_ip)
     net = Mininet(topo=topo, controller=c1)
     net.start()
-    #sleep(5)
-    #net.pingAll()
     CLI(net)
     net.stop()
